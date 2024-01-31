@@ -125,4 +125,12 @@ const countPosSumNegFE = (array) => {
   return result;
 }
 
+// Using Reduce
+const countPosSumNegR = (array) => {
+  return array.reduce((result, item) => {
+      item > 0 ? result[0]++ : result[1]+= item;
+      return result;
+  }, [0,0])
+}
+
 console.log(countPosSumNeg(array1))
