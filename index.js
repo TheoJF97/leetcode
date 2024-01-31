@@ -116,4 +116,13 @@ const countPosSumNeg = (array) => {
     } return [counter, sum];
 }
 
+// Using forEach
+const countPosSumNegFE = (array) => {
+  let result = [0,0];
+  array.forEach(item => {
+      item > 0 ? result[0]++ : result[1]+= item;
+  }) 
+  return result;
+}
+
 console.log(countPosSumNeg(array1))
