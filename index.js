@@ -95,3 +95,25 @@ const halloween = (kidsCandies) => {
 const kidsCandies1 =  [1,2,5,6,7,3,4]
 // Expected output: array of bools: [false, false, true, true , true ,false, true]
 console.log(halloween(kidsCandies1));
+
+
+// Given an array of integers, return an array where the first element is the count of positives numbers and the second element is sum of negative numbers.
+
+// Input: [1, 2, 100, 165165, 51, -1, -1, -10]
+// Output: [5, -12]
+
+const array1 = [1, 2, 100, 165165, 51, -1, -1, -10];
+
+const countPosSumNeg = (array) => {
+    let counter = 0;
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+            counter++;
+        } else {
+            sum += array[i];
+        }
+    } return [counter, sum];
+}
+
+console.log(countPosSumNeg(array1))
