@@ -354,3 +354,39 @@ console.log(binarySearch(arrOfInts, 10));
 
 // Expected Output: -1 because 10 DNE
 console.log(binarySearch(arrOfInts, 11));
+
+
+// ================== findSmallestInteger
+// Question: Given an array of integers, find the smallest integer.
+
+const findSmallestInt = (arr) => {
+  return Math.min(...arr);
+}
+
+const arr1 = [4, 2, 1, 6, 8]
+
+console.log("Smallest Int: " + findSmallestInt(arr1));
+
+// ================== getAverages
+// Question: Write a function that takes in an array of integers and returns an object with keys minimum, maximum, average with correct values.
+
+const getAverages = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
+  }
+  
+  const output = {
+      minimum: Math.min(...arr),
+      maximum: Math.max(...arr),
+      average: sum / arr.length,
+  }
+  return output; 
+}
+
+const arr2 = [1, 5, 10]
+
+console.log(getAverages(arr2));
+
+
+
