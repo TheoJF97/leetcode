@@ -21,3 +21,15 @@ console.log(twoSum(arrInts2, 6));
 
 // Output: [0,1];
 console.log(twoSum(arrInts3, 6));
+
+const twoSumHM = (arr, target) => {
+    const numToIndex = new Map();
+    for (let i = 0; i < arr.length; i++) {
+        const complement = target - nums[i];
+        if (numsToIndex.has(complement)) {
+            return [numToIndex.get(complement), i];
+        }
+        numToIndex.set(nums[i], i);
+    }
+    return [];
+}
