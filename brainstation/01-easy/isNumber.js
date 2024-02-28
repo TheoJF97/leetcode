@@ -26,13 +26,36 @@ const isNumberFL = (arr) => {
   return result;
 };
 
-console.log(isNumberFL(arr1));
-console.log(isNumberFL(arr2));
+// console.log(isNumberFL(arr1));
+// console.log(isNumberFL(arr2));
 
 // Using forEach
+function isNumberFE(arr) {
+  let result = true;
+  arr.forEach((number) => {
+    if (typeof number !== "number") {
+      result = false;
+    }
+  });
+  return result;
+}
 
-// function isNumberFE() = {
+// console.log(isNumberFE(arr1));
+// console.log(isNumberFE(arr2));
 
-// } 
+// Using every
+function isNumberEvery(arr) {
+  return arr.every((number) => typeof number === "number");
+}
 
+// console.log(isNumberEvery(arr1));
+// console.log(isNumberEvery(arr2));
 
+// using find
+
+const isNumberFind = (arr) => {
+  return !arr.find((number) => typeof number !== "number");
+};
+
+console.log(isNumberFind(arr1));
+console.log(isNumberFind(arr2));
