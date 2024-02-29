@@ -55,3 +55,53 @@ console.log(removeURL_FE(BS_URL));
 
 // Expected output: www.brainstation.io?page=1
 console.log(removeURL_FE(BS_URL2));
+
+/*
+SPLIT Solution
+*/
+
+function removeURL_Split(url) {
+  return url.split('#')[0]
+}
+
+// Expected output: www.brainstation.io
+console.log(removeURL_Split(BS_URL));
+
+// Expected output: www.brainstation.io?page=1
+console.log(removeURL_Split(BS_URL2));
+
+/*
+Solution with building a new string until break
+*/
+const removeURL_NewString = (url) => {
+  let string = "";
+  for (let i = 0; i < url.length; i++) {
+    if (url[i] === "#") {
+      // break exits the loop once it hits the #
+      break;
+    }
+    string += url[i];
+  }
+  return string;
+};
+
+console.log(removeURL_NewString(BS_URL));
+console.log(removeURL_NewString(BS_URL2));
+
+/*
+Replace REGEX solution:
+
+Regex explained:
+"/": Delimiters indicating the start and end of the regex.
+"#": The literal character #.
+".*": .* is a regex pattern that matches any character (.) zero or 
+      more times (*). This captures everything that comes after the #
+
+*/
+function removeUrl_Regex(url) {
+  return url.replace(/(#.*)/, "");
+}
+
+console.log(removeUrl_Regex(BS_URL));
+console.log(removeUrl_Regex(BS_URL2));
+console.log(BS_URL.replace(/(#.*)/, ""));
