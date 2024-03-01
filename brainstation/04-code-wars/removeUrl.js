@@ -59,7 +59,6 @@ console.log(removeURL_FE(BS_URL2));
 /*
 SPLIT Solution
 */
-
 function removeURL_Split(url) {
   return url.split('#')[0]
 }
