@@ -69,5 +69,28 @@ const sortString = (sentence) => {
   return orderedSentence.join(" ");
 };
 
-console.log(sortString(test1));
-console.log(sortString(test2));
+// console.log(sortString(test1));
+// console.log(sortString(test2));
+
+/*
+*/
+
+const sortStringSolution = (sentence) => {
+  let arr = sentence.split(" ");
+  console.log(arr);
+  let newString = [];
+
+  arr.forEach((word) => {
+    word.split("").forEach((char) => {
+      if (!!Number(char)) {
+        newString[char] = word;
+        console.log(word);
+      }
+    });
+  });
+
+  return newString.join(" ");
+};
+
+console.log(sortStringSolution("4of Fo1r pe6ople g3ood th5e the2"));
+
