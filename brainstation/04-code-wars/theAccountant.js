@@ -21,6 +21,9 @@ const test1 = 12;
 const test2 = 42;
 const test3 = 70304;
 
+/*
+My Solution
+*/
 const expandedForm = (number) => {
   // arrOfInts is an array of ints
   const arrOfInts = String(number)
@@ -63,6 +66,35 @@ const expandedForm = (number) => {
   return expandedFormArr.join(" + ");
 };
 
-console.log(expandedForm(test1));
-console.log(expandedForm(test2));
-console.log(expandedForm(test3));
+// console.log(expandedForm(test1));
+// console.log(expandedForm(test2));
+// console.log(expandedForm(test3));
+
+/*
+Solution 2
+*/
+const expandedForm_v2 = (n) => {
+  return (
+    n
+      // converts int to string
+      .toString()
+      // converts string to array of strings
+      .split("")
+      // mutates array by reversing its elements
+      .reverse()
+      // for each element, multiply the number by 10^i
+      // i = element's index
+      // 2*(10^0) = 2, 10*(10^1) = 100
+      .map((a, i) => a * Math.pow(10, i))
+      // take away any zeros in array
+      .filter((a) => a > 0)
+      //   mutates array by reversing elements
+      .reverse()
+      //   converts array into string
+      .join(" + ")
+  );
+};
+
+console.log(expandedForm_v2(test1));
+console.log(expandedForm_v2(test2));
+console.log(expandedForm_v2(test3));
