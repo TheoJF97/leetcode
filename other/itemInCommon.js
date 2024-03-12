@@ -1,3 +1,11 @@
+/* ITEM IN COMMON
+Question: Compare 2 arrays that have integers; If both arrays have a common element, return true; else false
+
+test 1 - expected output: true 
+let array1 = [1, 3, 5]
+let array2 = [2, 4 , 5]
+*/
+
 let array1 = [1, 3, 5];
 let array2 = [2, 4, 5];
 let array3 = [2, 4, 6];
