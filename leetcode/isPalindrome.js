@@ -27,6 +27,9 @@ const test2 = "race a car"; // false
 const test3 = "RACE car"; // true
 const test4 = " "; // true
 
+/*
+THEO'S SOLUTION
+*/
 const isPalindrome = (str) => {
   // convert all uppercase letters into lowercase letters
   const stringArray = str
@@ -57,3 +60,24 @@ const isPalindrome = (str) => {
 // console.log(isPalindrome(test2));
 // console.log(isPalindrome(test3));
 // console.log(isPalindrome(test4));
+
+const isPalindrome_Harsh = (input) => {
+  let nonAlphaString = input.replace(/[^A-Za-z0-9]/g, "");
+  let lowerCase = nonAlphaString.toLowerCase();
+  let charFromLast = lowerCase.length - 1;
+  let result = true;
+
+  for (let i = 0; i < lowerCase.length; i++) {
+    if (lowerCase[i] !== lowerCase[charFromLast]) {
+      result = false;
+      break;
+    }
+    charFromLast--;
+  }
+  return result;
+};
+
+// console.log(isPalindrome_Harsh(test1));
+// console.log(isPalindrome_Harsh(test2));
+// console.log(isPalindrome_Harsh(test3));
+// console.log(isPalindrome_Harsh(test4));
