@@ -81,3 +81,30 @@ const isPalindrome_Harsh = (input) => {
 // console.log(isPalindrome_Harsh(test2));
 // console.log(isPalindrome_Harsh(test3));
 // console.log(isPalindrome_Harsh(test4));
+
+function isPalindrome_pointer(s) {
+  // Convert the string to lowercase and remove non-alphanumeric characters
+  s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  // Initialize two pointers, one at the start and one at the end of the string
+  let left = 0;
+  let right = s.length - 1;
+
+  // Loop until the pointers meet or cross each other
+  while (left < right) {
+    // If characters at the two pointers are not equal, return false
+    if (s[left] !== s[right]) {
+      return false;
+    }
+    // Move the pointers inward
+    left++;
+    right--;
+  }
+  // If the loop completes without returning false, the string is a palindrome
+  return true;
+}
+
+// Test cases
+console.log(isPalindrome_pointer("A man, a plan, a canal: Panama")); // Output: true
+console.log(isPalindrome_pointer("race a car")); // Output: false
+console.log(isPalindrome_pointer(" ")); // Output: true
