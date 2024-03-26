@@ -31,3 +31,9 @@ Return the result table in any order.
 SELECT Person.firstName, Person.lastName, Address.city, Address.state
 FROM Person
 LEFT JOIN Address ON Person.personId = Address.personId
+
+-- Solution 2
+SELECT firstName, lastName, city, state
+FROM Person p
+LEFT JOIN Address a
+ON p.personId = a.personId
