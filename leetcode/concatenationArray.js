@@ -39,3 +39,12 @@ const getConcatenation = (nums) => {
 
 console.log(getConcatenation(test1));
 console.log(getConcatenation(test2));
+
+//====================================================================================
+
+const getConcatenation_Spread = (nums) => {
+  return [...nums, ...nums];
+};
+
+console.log(getConcatenation_Spread(test1));
+console.log(getConcatenation_Spread(test2));
